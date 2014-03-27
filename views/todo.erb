@@ -7,9 +7,11 @@
   <h1>Todo list</h1>
 
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+  	<% @todos.each do |item| %>
+    <li><%= item %></li>
+    <!-- <li></li>
+    <li></li> -->
+    <% end %>
   </ul>
 
 </body>
