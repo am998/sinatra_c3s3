@@ -5,20 +5,33 @@
 </head>
 <body>
   <h1>Invites</h1>
+  <table>
+    <% @rsvps.each do |invites| %>
+    <tr>
+      <td><%= invites [0] %></td>
+      <td><%= invites [1] %></td>
+   </tr>
+ <% end %>
+  </table>
+       
 
-  <h2>Attendees (25)</h2>
+  <h2>Attendees (<%= @acceptance_count %>)</h2>
+  
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+  
+  <% @acceptances.each do |yes| %>
+    <li> <%= yes[0] %></li>
+  <% end %>
+  
   </ul>
+ 
 
-  <h2>Apologies (22)</h2>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+<h2>Apologies (<%= @rejection_count %>) </h2>
+<ul>
+<% @rejections.each do |no| %>
+  <li> <%= no[0] %></li>
+<% end %>
+</ul>
 
 
 </body>

@@ -24,10 +24,26 @@ end
 get '/rsvps' do
   @rsvps = CSV.read('rsvps.csv')
 
+
+
   @acceptances = []
   @rejections  = []
   @acceptance_count = 0
   @rejection_count  = 0
+
+  @rsvps.each do |row|
+
+    if row[1] == "yes"
+      @acceptances << row
+    else
+      @rejections << row
+    end
+
+  end
+
+  @acceptance_count=@acceptances.length
+  @rejection_count=@rejections.length
+
 
   # TODO categorise rsvps into acceptances/rejections and count them
 
